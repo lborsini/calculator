@@ -12,7 +12,6 @@ icon = ImageTk.PhotoImage(file='calc.png')
 root.iconphoto(True, icon)
 
 equation = StringVar()
-operador = ""
 
 def press(num):
     equation.set(equation.get() + str(num))
@@ -27,11 +26,6 @@ def equalPress():
 def clear():
     equation.set('')
 
-def log(num):
-    pass
-
-def average(num):
-    pass
 
 display = Entry(root, textvariable=equation)
 display.grid(row=0, columnspan=5, sticky='nswe', ipady=10, padx=2, pady=25)
@@ -40,8 +34,8 @@ display.config(bg='powder blue', font=('arial', 20, 'bold'), justify='right', bd
 btnln = Button(root, text=' ln ',bd=3 ,fg='#fff', background='#EF9A53', height=3 ,width=11, command=lambda: press('log('))
 btnln.grid(row=1, column=3, sticky='nswe', padx=1, pady=1)
 
-btnModal = Button(root, text=' % ',bd=3 ,fg='#fff', background='#EF9A53', height=3, width=11, command=lambda: press('%'))
-btnModal.grid(row=2, column=2, sticky='nswe', padx=1, pady=1)
+btnModulo = Button(root, text=' % ',bd=3 ,fg='#fff', background='#EF9A53', height=3, width=11, command=lambda: press('%'))
+btnModulo.grid(row=2, column=2, sticky='nswe', padx=1, pady=1)
 
 btnPR = Button(root, text=' ) ', bd=3 ,fg='#fff', background='#EF9A53', height=3, width=11, command=lambda: press(')'))
 btnPR.grid(row=2, column=1, sticky='nswe', padx=1, pady=1)
@@ -109,5 +103,6 @@ equal.grid(row=6, column=3, sticky='nswe', padx=1, pady=1)
 clear = Button(root, text=' C ', bd=3 ,fg='#fff', background='#999', height=3, width=11, command=clear)
 clear.grid(row=6, column=2, sticky='nswe', padx=1, pady=1)
 
+display.focus()
 
 root.mainloop() 
