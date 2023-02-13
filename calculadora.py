@@ -1,5 +1,4 @@
 from tkinter import *
-from PIL import Image, ImageTk
 from math import *
 
 root = Tk()
@@ -7,9 +6,6 @@ root.configure(background='skyblue4')
 root.title('Calc')
 root.geometry('365x510')
 root.resizable(0,0)
-
-icon = ImageTk.PhotoImage(file='calc.png')
-root.iconphoto(True, icon)
 
 equation = StringVar()
 
@@ -25,7 +21,6 @@ def equalPress():
 
 def clear():
     equation.set('')
-
 
 display = Entry(root, textvariable=equation)
 display.grid(row=0, columnspan=5, sticky='nswe', ipady=10, padx=2, pady=25)
